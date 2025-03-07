@@ -1,4 +1,5 @@
 ﻿using es.data;
+using DotNetEnv;
 using Microsoft.Extensions.Configuration;
 using System;
 using System.Collections.Generic;
@@ -17,6 +18,13 @@ namespace es.admin
 
         void Application_Start(object sender, EventArgs e)
         {
+            // Load the .env file
+            Env.Load(); // This loads the .env file into the environment variables
+
+            // Optional; Debugging to check if the connection string is loaded
+            string connString = Environment.GetEnvironmentVariable("CONNECTION_STRING");
+            System.Diagnostics.Debug.WriteLine("Loaded Connection String: " + connString);
+
             // Code that runs on application startup
             RouteConfig.RegisterRoutes(RouteTable.Routes);
             BundleConfig.RegisterBundles(BundleTable.Bundles);
