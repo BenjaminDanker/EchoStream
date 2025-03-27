@@ -14,20 +14,8 @@ namespace es.mobile
             InitializeComponent();
             _httpClient = httpClient;
 
-            var button = new Button
-            {
-                Text = "Test API Connection"
-            };
-
-            button.Clicked += async (sender, args) =>
-            {
-                await TestApiConnection();
-            };
-
-            Content = new StackLayout
-            {
-                Children = { button }
-            };
+            // Initialize the WebView with Google.com
+            MyWebView.Source = "https://www.google.com";
         }
 
         private async Task TestApiConnection()
@@ -42,10 +30,10 @@ namespace es.mobile
                 await DisplayAlert("Error", ex.Message, "OK");
             }
         }
+
         private async void OnTestApiClicked(object sender, EventArgs e)
         {
             await TestApiConnection();
         }
-
     }
 }
