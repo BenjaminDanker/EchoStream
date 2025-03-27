@@ -10,16 +10,21 @@
                     Clicked="OnTestApiClicked"
                     HorizontalOptions="Center" />
 
-            <!-- New WebView Section -->
+            <!-- Local Server WebView -->
             <Frame Padding="10" BorderColor="LightGray" CornerRadius="10">
                 <VerticalStackLayout Spacing="10">
-                    <Label Text="Web Browser" FontSize="Medium" FontAttributes="Bold" />
-                    <WebView x:Name="MyWebView" 
-                             HeightRequest="500" 
+                    <Label Text="Local Server (es.view)" FontSize="Medium" FontAttributes="Bold" />
+                    <WebView x:Name="LocalWebView" 
+                             HeightRequest="300" 
+                             HorizontalOptions="Fill"
                              VerticalOptions="FillAndExpand" />
+                    <ActivityIndicator x:Name="LocalLoadingIndicator"
+                                      IsVisible="False"
+                                      IsRunning="False"
+                                      Color="Blue"
+                                      HorizontalOptions="Center" />
                 </VerticalStackLayout>
             </Frame>
         </VerticalStackLayout>
     </ScrollView>
-
 </ContentPage>

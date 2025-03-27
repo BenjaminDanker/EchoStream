@@ -18,7 +18,7 @@ namespace es.mobile
 
             // Register HttpClient with API Base URL
             builder.Services.AddSingleton(sp =>
-                new HttpClient { BaseAddress = new Uri("https://localhost:44376/") });
+                new HttpClient { BaseAddress = new Uri("https://localhost:44334/") });
 
             // Register MainPage & AppShell for Dependency Injection
             builder.Services.AddTransient<MainPage>();
